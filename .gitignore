@@ -1,0 +1,28 @@
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Android Studio
+.idea/
+*.iml
+local.properties
+
+# Kotlin/Native
+*.klib
+*.bc
+
+# iOS
+iosApp/Pods/
+iosApp/.build/
+*.xcworkspace
+!default.xcworkspace
+DerivedData/
+
+# Mac
+.DS_Store
+
+# Output
+*.aar
+*.jar
+xcuserdata/
