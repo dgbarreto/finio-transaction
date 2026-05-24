@@ -28,4 +28,4 @@ dependencyResolutionManagement {
     }
 }
 
-include(":sharedLogic")
+include(":transactions")
