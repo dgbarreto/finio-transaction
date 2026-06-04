@@ -1,28 +1,19 @@
-# Gradle
-.gradle/
-build/
-!gradle/wrapper/gradle-wrapper.jar
-
-# Android Studio
-.idea/
 *.iml
+.kotlin
+.gradle
+**/build/
+xcuserdata
+!src/**/build/
 local.properties
-
-# Kotlin/Native
-*.klib
-*.bc
-
-# iOS
-iosApp/Pods/
-iosApp/.build/
-*.xcworkspace
-!default.xcworkspace
-DerivedData/
-
-# Mac
+.idea
 .DS_Store
-
-# Output
-*.aar
-*.jar
-xcuserdata/
+captures
+.externalNativeBuild
+.cxx
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcodeproj/project.xcworkspace/
+!*.xcworkspace/contents.xcworkspacedata
+**/xcshareddata/WorkspaceSettings.xcsettings
+node_modules/
