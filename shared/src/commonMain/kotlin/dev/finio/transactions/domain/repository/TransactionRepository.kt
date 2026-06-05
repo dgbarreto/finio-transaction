@@ -21,7 +21,7 @@ interface TransactionRepository{
         category: TransactionCategory,
         date: String? = null,
         notes: String? = null
-    )
+    ): Transaction
     suspend fun updateTransaction(
         id: String,
         title: String? = null,
@@ -30,7 +30,7 @@ interface TransactionRepository{
         category: TransactionCategory? = null,
         date: String? = null,
         notes: String? = null
-    )
+    ): Transaction
     suspend fun deleteTransaction(id: String)
     suspend fun getSummary(): TransactionSummary
 }
