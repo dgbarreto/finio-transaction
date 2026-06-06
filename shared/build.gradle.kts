@@ -78,17 +78,17 @@ publishing {
             groupId = "dev.finio"
             version = publishVersion
             artifactId = when (name) {
-                "android" -> "finio-transactions-android"
-                "iosArm64" -> "finio-transactions-iosarm64"
-                "iosSimulatorArm64" -> "finio-transactions-iossimulatorarm64"
-                "kotlinMultiplatform" -> "finio-transactions-kmp"
-                else -> "finio-transactions-$name"
+                "android" -> "finio-transaction-android"
+                "iosArm64" -> "finio-transaction-iosarm64"
+                "iosSimulatorArm64" -> "finio-transaction-iossimulatorarm64"
+                "kotlinMultiplatform" -> "finio-transaction-kmp"
+                else -> "finio-transaction-$name"
             }
 
             pom {
-                name.set("Finio Transactions")
+                name.set("Finio Transaction")
                 description.set("Finios transaction KMP module")
-                url.set("https://github.com/dgbarreto/finio-transactions")
+                url.set("https://github.com/dgbarreto/finio-transaction")
 
                 licenses {
                     license {
