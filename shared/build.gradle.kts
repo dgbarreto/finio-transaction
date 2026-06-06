@@ -11,8 +11,8 @@ val publishVersion = System.getenv("BITRISE_GIT_TAG")
     ?: "0.1.0-SNAPSHOT"
 
 plugins {
-    alias(libs.plugins.androidMultiplatformLibrary)
     alias(libs.plugins.kotlinMultiplatform)
+    alias(libs.plugins.androidMultiplatformLibrary)
     alias(libs.plugins.kotlinSerialization)
     alias(libs.plugins.sqldelight)
     id("maven-publish")
@@ -72,53 +72,51 @@ sqldelight {
     }
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            withType<MavenPublication> {
-                groupId = "dev.finio"
-                version = publishVersion
-                artifactId = when (name) {
-                    "android" -> "finio-transaction-android"
-                    "iosArm64" -> "finio-transaction-iosarm64"
-                    "iosSimulatorArm64" -> "finio-transaction-iossimulatorarm64"
-                    "kotlinMultiplatform" -> "finio-transaction-kmp"
-                    else -> "finio-transaction-$name"
+publishing {
+    publications {
+        withType<MavenPublication> {
+            groupId = "dev.finio"
+            version = publishVersion
+            artifactId = when (name) {
+                "android" -> "finio-transaction-android"
+                "iosArm64" -> "finio-transaction-iosarm64"
+                "iosSimulatorArm64" -> "finio-transaction-iossimulatorarm64"
+                "kotlinMultiplatform" -> "finio-transaction-kmp"
+                else -> "finio-transaction-$name"
+            }
+
+            pom {
+                name.set("Finio Transaction")
+                description.set("Finios transaction KMP module")
+                url.set("https://github.com/dgbarreto/finio-transaction")
+
+                licenses {
+                    license {
+                        name.set("MIT License")
+                        url.set("https://opensource.org/licences/MIT")
+                    }
                 }
 
-                pom {
-                    name.set("Finio Transaction")
-                    description.set("Finios transaction KMP module")
-                    url.set("https://github.com/dgbarreto/finio-transaction")
-
-                    licenses {
-                        license {
-                            name.set("MIT License")
-                            url.set("https://opensource.org/licences/MIT")
-                        }
-                    }
-
-                    developers {
-                        developer {
-                            id.set("dgbarreto")
-                            name.set("Danilo Barreto")
-                            email.set("dgbarreto@gmail.com")
-                        }
+                developers {
+                    developer {
+                        id.set("dgbarreto")
+                        name.set("Danilo Barreto")
+                        email.set("dgbarreto@gmail.com")
                     }
                 }
             }
         }
+    }
 
-        repositories {
-            maven {
-                name = "GitHubPackages"
-                url = uri("https://maven.pkg.github.com/dgbarreto/finio-transaction")
-                credentials {
-                    username = localProperties["github.actor"] as String?
-                        ?: System.getenv("GITHUB_ACTOR") ?: ""
-                    password = localProperties["github.token"] as String?
-                        ?: System.getenv("GITHUB_TOKEN") ?: ""
-                }
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/dgbarreto/finio-transaction")
+            credentials {
+                username = localProperties["github.actor"] as String?
+                    ?: System.getenv("GITHUB_ACTOR") ?: ""
+                password = localProperties["github.token"] as String?
+                    ?: System.getenv("GITHUB_TOKEN") ?: ""
             }
         }
     }
