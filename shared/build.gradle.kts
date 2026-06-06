@@ -111,7 +111,7 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/dgbarreto/finio-transactions")
+            url = uri("https://maven.pkg.github.com/dgbarreto/finio-transaction")
             credentials {
                 username = localProperties["github.actor"] as String?
                     ?: System.getenv("GITHUB_ACTOR") ?: ""
