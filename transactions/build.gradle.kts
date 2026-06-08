@@ -78,11 +78,11 @@ publishing {
             groupId = "dev.finio"
             version = publishVersion
             artifactId = when (name) {
-                "android" -> "transaction-android"
-                "iosArm64" -> "transaction-iosarm64"
-                "iosSimulatorArm64" -> "transaction-iossimulatorarm64"
-                "kotlinMultiplatform" -> "transaction-kmp"
-                else -> "transaction-$name"
+                "android" -> "transactions-android"
+                "iosArm64" -> "transactions-iosarm64"
+                "iosSimulatorArm64" -> "transactions-iossimulatorarm64"
+                "kotlinMultiplatform" -> "transactios-kmp"
+                else -> "transactions-$name"
             }
 
             pom {
