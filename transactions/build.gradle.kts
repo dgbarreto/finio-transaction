@@ -81,7 +81,7 @@ publishing {
                 "android" -> "transactions-android"
                 "iosArm64" -> "transactions-iosarm64"
                 "iosSimulatorArm64" -> "transactions-iossimulatorarm64"
-                "kotlinMultiplatform" -> "transactios-kmp"
+                "kotlinMultiplatform" -> "transactions-kmp"
                 else -> "transactions-$name"
             }
 
