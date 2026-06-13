@@ -9,7 +9,7 @@ import dev.finio.transactions.domain.model.TransactionType
 
 fun TransactionDto.toDomain(): Transaction = Transaction(
     id = _id,
-    title = title,
+    title = description,
     amount = amount,
     type = TransactionType.valueOf(type.uppercase()),
     category = TransactionCategory.valueOf(category.uppercase()),

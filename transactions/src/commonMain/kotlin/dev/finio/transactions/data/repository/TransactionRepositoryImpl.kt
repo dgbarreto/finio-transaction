@@ -53,7 +53,7 @@ class TransactionRepositoryImpl(
         val response = remoteDataSource.createTransaction(
             token = token,
             request = CreateTransactionRequestDto(
-                title = title,
+                description = title,
                 amount = amount,
                 type = type.name.lowercase(),
                 category = category.name.lowercase(),
@@ -80,7 +80,7 @@ class TransactionRepositoryImpl(
             token = token,
             id = id,
             request = UpdateTransactionRequestDto(
-                title = title,
+                description = title,
                 amount = amount,
                 type = type?.name?.lowercase(),
                 category = category?.name?.lowercase(),

@@ -5,7 +5,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class TransactionDto(
     val _id: String,
-    val title: String,
+    val description: String,
     val amount: Double,
     val type: String,
     val category: String,
@@ -15,7 +15,7 @@ data class TransactionDto(
 
 @Serializable
 data class CreateTransactionRequestDto(
-    val title: String,
+    val description: String,
     val amount: Double,
     val type: String,
     val category: String,
@@ -25,7 +25,7 @@ data class CreateTransactionRequestDto(
 
 @Serializable
 data class UpdateTransactionRequestDto(
-    val title: String? = null,
+    val description: String? = null,
     val amount: Double? = null,
     val type: String? = null,
     val category: String? = null,
