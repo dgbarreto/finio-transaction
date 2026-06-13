@@ -35,7 +35,7 @@ data class UpdateTransactionRequestDto(
 
 @Serializable
 data class TransactionSummaryDto(
-    val totalIncome: Double,
-    val totalExpenses: Double,
+    val income: Double,
+    val expense: Double,
     val balance: Double
 )

@@ -18,7 +18,7 @@ fun TransactionDto.toDomain(): Transaction = Transaction(
 )
 
 fun TransactionSummaryDto.toDomain(): TransactionSummary = TransactionSummary(
-    totalIncome = totalIncome,
-    totalExpenses = totalExpenses,
+    totalIncome = income,
+    totalExpenses = expense,
     balance = balance
 )
