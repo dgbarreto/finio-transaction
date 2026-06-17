@@ -75,6 +75,32 @@ class TransactionViewModel(
         }
     }
 
+    fun updateTransaction(
+        id: String,
+        title: String?,
+        amount: Double?,
+        type: TransactionType?,
+        category: TransactionCategory?,
+        date: String? = null,
+        notes: String? = null
+    ){
+        viewModelScope.launch {
+            try{
+                repository.updateTransaction(
+                    id =  id,
+                    title = title,
+                    amount = amount,
+                    type = type,
+                    category = category,
+                    date = date,
+                    notes = notes
+                )
+            } catch (e: Exception){
+                _state.value = TransactionState.Error(e.message ?: "Update failed")
+            }
+        }
+    }
+
     fun deleteTransaction(id: String){
         viewModelScope.launch {
             try {
